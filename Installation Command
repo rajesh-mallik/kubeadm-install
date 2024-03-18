@@ -48,8 +48,9 @@ sudo apt-get install -y jq
 sudo systemctl enable --now kubelet
 sudo systemctl start kubelet
 
+--------
 # Execute only  in master node
-
+--------
 sudo kubeadm config images pull
 
 sudo kubeadm init
@@ -63,5 +64,15 @@ sudo chown "$(id -u)":"$(id -g)" "$HOME"/.kube/config
 kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.26.0/manifests/calico.yaml
 
 kubeadm token create --print-join-command
+
+
+--------
+kubernetes cluster view
+--------
+git clone https://github.com/schoolofdevops/kube-ops-view
+
+kubectl apply -f kube-ops-view/deploy/
+
+ip-addes:32000/#scale=3.0
 
 
