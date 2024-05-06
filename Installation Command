@@ -75,4 +75,14 @@ kubectl apply -f kube-ops-view/deploy/
 
 ip-addes:32000/#scale=3.0
 
+-----------
+Deploy metric server with the following commands,
+------------
+
+cd ~
+git clone https://github.com/schoolofdevops/metrics-server.git
+kubectl apply -k metrics-server/manifests/overlays/release
+
+kubectl get deploy,pods -n kube-system --selector='k8s-app=metrics-server'
+
 
