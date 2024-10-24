@@ -6,4 +6,4 @@ kubectl get svc -n argocd
 
 kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "NodePort"}}'
 
-kubectl port-forward -n argocd service/argocd-server 31779:443 --address=0.0.0.0 &     # edit the port 31779
+kubectl port-forward -n argocd service/argocd-server 8443:443 --address=0.0.0.0 &     # edit the port 31779
